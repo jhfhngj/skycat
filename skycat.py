@@ -67,4 +67,4 @@ if sys.argv[1] == "run":
 
 if sys.argv[1] == "delete":
     if int(input("are you sure? (1/0)")):
-        os.system(f"rm -rf {sys.argv[2]}")
+        os.system(f"rm -rf {sys.argv[2]}*")
