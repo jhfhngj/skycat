@@ -9,6 +9,10 @@ if len(sys.argv) < 3 and (sys.argv[1] != "init"):
     print("""usage:
 skycat [option] [os]
 
+default login credentials:
+user: skycat
+pass: skycat
+
 options:
 run     - run/download an os
 delete  - delete an os
