@@ -18,6 +18,9 @@ pass: skycatss
 or:
 user: root
 pass: skycatss
+maybe:
+user: root
+pass: skycat
 
 options:
 run     - run/download an os
