@@ -5,7 +5,7 @@ except:
     print("requests not found, installing")
     os.system("sudo apt install python3-requests -y")
 import requests
-if len(sys.argv) < 1: exit(1)
+if len(sys.argv) < 2: exit(1)
 if len(sys.argv) < 3 and (sys.argv[1] != "init"):
     print("""usage:
 skycat [option] [os]
