@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkyCat — easy prebuilt VMs</title>
+  <style>
+    body {
+      max-width: 760px;
+      margin: 3rem auto;
+      padding: 0 1.25rem;
+      color: #222;
+      font: 16px/1.6 system-ui, sans-serif;
+    }
+
+    h1, h2 {
+      line-height: 1.2;
+    }
+
+    code, pre {
+      font-family: ui-monospace, monospace;
+    }
+
+    pre {
+      overflow-x: auto;
+      padding: 1rem;
+      background: #f3f3f3;
+    }
+
+    a {
+      color: #0759a5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SkyCat</h1>
+    <p>A small command-line frontend for <a href="https://quickemu-project.github.io/">Quickemu</a> that downloads and runs prebuilt virtual machines.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Get started</h2>
+      <p>Use a Linux system with Python 3 installed. Download <code>skycat.py</code>, then initialize SkyCat once:</p>
+      <pre><code>python3 skycat.py init</code></pre>
+      <p>Download an available VM, then run the same command again to start it:</p>
+      <pre><code>python3 skycat.py run ubu14</code></pre>
+    </section>
+
+    <section>
+      <h2>Available VMs</h2>
+      <ul>
+        <li><code>ubu14</code> - Ubuntu 14.04 LTS</li>
+        <li><code>ade1b6</code> - Adelie Linux 1.0 beta 6</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Commands</h2>
+      <ul>
+        <li><code>run &lt;os&gt;</code> — download an image if needed, then run it.</li>
+        <li><code>delete &lt;os&gt;</code> — remove a downloaded image after confirmation.</li>
+        <li><code>conf &lt;os&gt; &lt;setting&gt; &lt;value&gt;</code> — change a VM setting such as <code>ram</code>, <code>disk_size</code>, or <code>cpu_cores</code>.</li>
+        <li><code>server &lt;os&gt;</code> — add the script's predefined port forwards.</li>
+      </ul>
+      <p>Run <code>python3 skycat.py --help</code> for the usage details. Be careful when editing VM configuration; unsupported changes can stop a VM from working.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>View the <a href="https://github.com/jhfhngj/skycat">source on GitHub</a>.</p>
+  </footer>
+</body>
+</html>

@@ -38,6 +38,9 @@ SkyCat is a frontend for QuickEMU that downloads and extracts prebuilt VMs.
 Instead of waiting quite a bit to setup and download, just wait quite a miniscule bit to download! No setup. Easy.
 
 user@host:~$ python3 skycat.py init
+initializing skycat
+skycat initialized
+do not run unless new skycat instance has been installed
 
 user@host:~$ time python3 skycat.py run ubu14 # Real tested performance metric, output is from actual command
 attempting to run ubu14
