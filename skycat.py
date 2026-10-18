@@ -20,6 +20,7 @@ run     - run/download an os
 delete  - delete an os
 init    - do this if you just downloaded skycat
 conf    - configure an os
+server  - configure an os with multiple server port forwards
 
 os:
 ubu14
@@ -37,15 +38,15 @@ except:
     os.system("sudo apt install python3-requests -y")
 import requests
 if len(sys.argv) < 2: exit(1)
-if (len(sys.argv) < 3 and (sys.argv[1] != "init")) or (len(sys.argv) > 5 and (sys.argv[1] != "conf")):
+if (len(sys.argv) < 3 and (sys.argv[1] not in ["server","init"])) or (len(sys.argv) > 5 and (sys.argv[1] != "conf")):
     print(usage)
     exit(1)
 
-if sys.argv[1] not in ["run","delete","init","conf"]:
+if sys.argv[1] not in ["run","delete","init","conf","server"]:
     print(usage)
     exit(1)
 
-if sys.argv[1] in ["run","delete","conf"] and (sys.argv[2] not in ["ubu14","ade1b6"]):
+if sys.argv[1] in ["run","delete","conf","server"] and (sys.argv[2] not in ["ubu14","ade1b6"]):
     print(usage)
     exit(1)
 
@@ -92,3 +93,14 @@ if sys.argv[1] == "conf":
                     new.append(line)
         with open(f"./{ossel}/{configuration}","w")as f:
             f.write("".join(new))
+
+if sys.argv[1] == "server":
+    ossel = sys.argv[2]
+    skib = os.listdir(f"./{ossel}/")
+    configuration = ""
+    for item in skib:
+        if item.endswith(".conf"):
+            configuration = item
+            break
+    with open(f"./{ossel}/{configuration}", "a") as f:
+        f.write('\nport_forwards=("8080:80" "8888:8080" "4430:443" "4433:4430" "33060:3306" "54320:5432" "27017:27017" "9090:9090" "3000:3000")\nssh_port="22220"\n')
